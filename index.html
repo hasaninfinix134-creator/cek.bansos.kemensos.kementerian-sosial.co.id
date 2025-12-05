@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Bansos</title>
+    <style>
+        /* Penyesuaian CSS untuk Tampilan Mobile */
+        body {
+            background: #f5f6fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            /* Mengubah height: 100vh agar konten bisa discroll pada layar kecil */
+            min-height: 100vh;
+            align-items: center;
+            margin: 0;
+            /* Mengurangi padding-top agar lebih proporsional di mobile */
+            padding-top: 80px; 
+            box-sizing: border-box; /* Memastikan padding tidak menambah lebar total */
+        }
+        .navbar {
+            width: 100%;
+            background: #3f51b5;
+            padding: 10px 0; /* Mengurangi padding vertikal */
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        .navbar img {
+            height: 48px; /* Mengurangi ukuran logo */
+            vertical-align: middle;
+        }
+        .navbar-title {
+            color: #fff;
+            font-size: 18px; /* Mengurangi ukuran judul */
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .login-container {
+            background: #fff;
+            padding: 24px 20px; /* Mengurangi padding */
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            /* Mengubah lebar menjadi persentase dan menggunakan max-width */
+            width: 90%; 
+            max-width: 360px; /* Batasan agar tidak terlalu lebar di tablet/desktop */
+            margin-top: 16px; /* Tambahkan sedikit margin atas di mobile */
+            margin-bottom: 24px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 18px; /* Mengurangi ukuran judul di container */
+            text-align: center;
+            color: #333;
+        }
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px; /* Menambah padding agar mudah diklik */
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+        }
+        .google { background: #db4437; }
+        .facebook { background: #4267B2; }
+        .instagram { background: #E1306C; }
+        .twitter { background: #1DA1F2; }
+        .social-btn i {
+            margin-right: 8px;
+        }
+        /* Style untuk Footer */
+        .footer {
+            margin-top: auto; /* Mendorong footer ke bawah */
+            padding: 16px 20px;
+            text-align: center;
+            color: #777;
+            font-size: 12px; /* Mengurangi ukuran font footer */
+            width: 100%;
+        }
+        .footer p {
+            margin: 4px 0;
+        }
+
+        /* Penyesuaian untuk perataan navbar */
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            padding: 0 16px; /* Padding samping untuk konten navbar */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-content">
+            <img src="loginlogo.png" alt="Logo Bansos">
+        </div>
+    </div>
+    <form class="login-container" method="post" action="utama.php">
+        <h2>Cek Penerima Bansos Dengan Login Di Platform</h2>
+        <div class="social-login">
+            <a class="social-btn google" href="google.html"><i class="fab fa-google"></i> Google</a>
+            <a class="social-btn facebook" href="face.html"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a class="social-btn instagram" href="insta.html"><i class="fab fa-instagram"></i> Instagram</a>
+            <a class="social-btn twitter" href="twitter.html"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </form>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Kementerian Sosial Republik Indonesia. Hak Cipta Dilindungi.</p>
+        <p>Hubungi Kami: <a href="https://kemensos.go.id/" style="color: #1976d2; text-decoration: none;">pusdatin@kemensos.go.id</a></p>
+    </footer>
+</body>
+</html>

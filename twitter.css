@@ -1,0 +1,130 @@
+/* 1. RESET dan FONT Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #0f1419; 
+    padding: 20px 0;
+}
+
+/* 2. Kontainer Utama */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* 3. Logo X (IMG) */
+.logo-area {
+    margin-bottom: 30px;
+}
+
+.x-logo-img {
+    width: 100px; /* Ukuran standar logo X */
+    height: 100px;
+}
+
+/* 4. Judul Halaman Login */
+h1 {
+    font-size: 24px;
+    font-weight: 900; /* Dibuat sangat tebal seperti tampilan asli X */
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* 5. Formulir Input */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    padding: 15px 10px;
+    border: 1px solid #cfd9de;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-form input:focus {
+    border-color: #1d9bf0; 
+    border-width: 2px;
+}
+
+/* 6. Tombol Login (Sekarang <button> di HTML Anda) */
+.login-btn {
+    /* BARIS SOLUSI: Membuat tombol mengisi lebar penuh kontainer induk (<form>) */
+    width: 100%; 
+    
+    display: block; 
+    background-color: #0f1419; 
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /* Hilangkan garis bawah default <a> */
+    text-decoration: none; 
+    /* Agar teks di tengah */
+    text-align: center; 
+}
+
+.login-btn:hover {
+    background-color: #333333;
+}
+
+/* 7. Tombol Lupa Sandi (Sekarang <a>) */
+.forgot-btn {
+    /* Tambahkan display: block untuk membuat <a> mengisi lebar penuh */
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0px solid #cfd9de;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #0f1419;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    /* Hilangkan garis bawah default <a> */
+    text-decoration: none; 
+}
+
+.forgot-btn:hover {
+    background-color: #f7f9f9;
+}
+
+/* 8. Prompt Daftar */
+.signup-prompt {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 15px;
+    color: #536471;
+}
+
+.signup-prompt a {
+    color: #1d9bf0; 
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.signup-prompt a:hover {
+    opacity: 0.8;
+}

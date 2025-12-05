@@ -1,0 +1,186 @@
+/* 1. RESET dan FONT Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font yang mirip Instagram/Sistem */
+    background-color: #fafafa; /* Latar belakang abu-abu muda khas Instagram */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10px;
+}
+
+/* 2. Kontainer Utama (Kotak Login) */
+.login-container {
+    width: 100%;
+    max-width: 350px; /* Lebar khas kartu login */
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 40px 40px 25px 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* 3. Logo */
+.logo-area {
+    margin-bottom: 25px;
+}
+
+.instagram-logo {
+    width: 175px; /* Ukuran logo Instagram */
+    height: auto;
+}
+
+/* 4. Formulir Input */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    padding: 9px 8px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.login-form input::placeholder {
+    color: #8e8e8e;
+}
+
+/* 5. Tombol Login */
+.login-btn {
+    background-color: #0095f6; /* Warna biru khas Instagram */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; /* Lebih membulat untuk mobile */
+    padding: 7px 0;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.7; /* Biasanya tombol non-aktif terlihat lebih redup */
+    transition: opacity 0.3s;
+    /* >>> MODIFIKASI: Hilangkan garis bawah pada teks Masuk (<a>) */
+    text-decoration: none; 
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+/* 6. Garis Pemisah "ATAU" */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+
+.or-text {
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 18px;
+}
+
+/* 7. Login dengan Facebook */
+.facebook-login {
+    margin-bottom: 25px;
+}
+
+.facebook-login a {
+    color: #385185; /* Warna biru Facebook */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fb-icon {
+    /* Placeholder untuk ikon Facebook */
+    display: inline-block;
+    color: white;
+    background-color: #385185;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+/* 8. Lupa Kata Sandi */
+.forgot-password {
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* 9. Kotak Daftar (di luar kotak login utama) */
+.signup-box {
+    width: 100%;
+    max-width: 350px;
+    background-color: #ffffff;
+    border: 0px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signup-box a {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* 10. Footer Meta (Paling bawah) */
+.meta-footer {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+/* 5. Branding Meta (Jarak Bawah) */
+.meta-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #8A8D91;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 50px; 
+}
+
+.meta-branding .meta-logo {
+    width: 100px; 
+    height: auto;
+    opacity: 0.7; 
+}

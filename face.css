@@ -1,0 +1,166 @@
+/* ... (Bagian RESET dan FONT Dasar TIDAK BERUBAH) ... */
+
+/* Background Gradient Mirip Gambar */
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Menggunakan gradient yang mirip dengan gambar */
+    background: linear-gradient(180deg, #e7f3ff 0%, #fff 50%, #f0f2f5 100%);
+    z-index: -1; 
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+/* 1. Pemilih Bahasa di Atas (Jarak Atas/Bawah) */
+.language-selector-top {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Jarak dari atas layar (diasumsikan) */
+    margin-top: 40px; 
+    /* Jarak ke Ikon Facebook di bawahnya */
+    margin-bottom: 50px; 
+    color: #65676B;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.language-selector-top i {
+    font-size: 12px;
+    color: #65676B;
+}
+
+.login-container {
+    width: 100%;
+    padding: 0 20px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Ikon Facebook (Jarak Bawah) */
+.facebook-icon {
+    width: 70px; 
+    height: auto;
+    /* Jarak dari Input Email di bawahnya */
+    margin-bottom: 40px; 
+}
+
+/* Form Styling */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Jarak antar Input dan Tombol */
+    gap: 12px; 
+}
+
+/* Input Fields */
+.login-form input {
+    width: 100%;
+    padding: 15px 15px; 
+    border: 1px solid #dddfe2;
+    border-radius: 8px; 
+    font-size: 16px;
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); 
+}
+
+/* Tombol Login (Sekarang <a>) */
+.login-btn {
+    /* Tambahkan display: block agar <a> mengisi lebar penuh */
+    display: block; 
+    background-color: #1877F2; 
+    color: #ffffff;
+    border: none;
+    border-radius: 20px; 
+    padding: 15px 0;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Hilangkan garis bawah */
+    text-decoration: none; 
+    /* Pastikan teks berada di tengah */
+    text-align: center; 
+    margin-bottom: 25px; 
+}
+
+.login-btn:hover {
+    background-color: #1669d7;
+}
+
+/* 3. Link Lupa Kata Sandi (Jarak Atas/Bawah) */
+.forgot-password {
+    color: #1877F2;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: -10px; 
+    margin-bottom: 160px; 
+}
+
+/* Garis Pemisah (Tidak Ada di gambar, HAPUS atau NONAKTIFKAN jika Anda menggunakan kode HTML sebelumnya) */
+.divider {
+    /* display: none; */ 
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    margin: 0; 
+}
+
+/* 4. Tombol Buat Akun Baru (Jarak Bawah) */
+.create-account-btn {
+    display: block;
+    background-color: transparent; 
+    color: #1877F2; 
+    /* Pastikan garis bawah tidak ada, meskipun sudah ada di link biru */
+    text-decoration: none; 
+    border: 1px solid #1877F2; 
+    border-radius: 20px;
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 40px; 
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.create-account-btn:hover {
+    background-color: #d0e4fb;
+}
+
+
+/* 5. Branding Meta (Jarak Bawah) */
+.meta-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #8A8D91;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 20px; 
+}
+
+.meta-branding .meta-logo {
+    width: 100px; 
+    height: auto;
+    opacity: 0.7; 
+}
+/* ... (Media Queries TIDAK BERUBAH) ... */

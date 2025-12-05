@@ -1,0 +1,164 @@
+/* RESET dan FONT Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* Latar belakang putih seperti Google */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Konten dimulai dari atas */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Kontainer Utama untuk Layar Mobile */
+.login-container {
+    width: 100%;
+    max-width: 360px; /* Lebar maksimal khas tampilan mobile/kartu Google */
+    padding: 24px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 40px; /* Jarak dari atas */
+}
+
+/* Logo Google */
+.google-logo {
+    width: 75px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #202124;
+}
+
+p {
+    font-size: 16px;
+    color: #5f6368;
+    margin-bottom: 24px;
+}
+
+/* Form */
+.login-form {
+    text-align: left;
+}
+
+/* Grup Input (Meniru Gaya Input Google) */
+.input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 14px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Efek Fokus pada Input */
+.input-group input:focus {
+    border-color: #1a73e8; /* Warna biru Google saat fokus */
+    border-width: 2px;
+    padding: 14px 13px; /* Kompensasi untuk border yang lebih tebal */
+}
+
+/* Label Placeholder */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #80868b;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+/* Efek Label Naik Saat Fokus/Terisi */
+.input-group input:focus + label,
+/* Menggunakan :not([placeholder]) karena placeholder dikosongkan untuk floating label */
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #1a73e8;
+    background: #ffffff;
+    padding: 0 5px;
+}
+
+
+/* Tautan Lupa Email (Sekarang Lupa Sandi) */
+.forgot-email {
+    display: inline-block;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* Info Tamu */
+.guest-info {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.guest-info a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Grup Tombol */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-account-btn {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+.next-btn {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* >>> MODIFIKASI: Hilangkan garis bawah pada teks Masuk (<a>) */
+    text-decoration: none; 
+}
+
+.next-btn:hover {
+    background-color: #1669d7;
+}
+
+/* CSS untuk Layar Lebih Besar (Tablet/Desktop) - Opsional */
+@media (min-width: 600px) {
+    body {
+        align-items: center; /* Posisikan kontainer di tengah secara vertikal */
+    }
+}

